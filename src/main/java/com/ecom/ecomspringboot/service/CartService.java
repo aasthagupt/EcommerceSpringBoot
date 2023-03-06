@@ -52,7 +52,7 @@ public class CartService {
 		cartBean.setCartItem(cartItems);
 		return cartBean;		
 	}
-	public void deleteById(int id) {
+	public void deleteCartItem(int id) {
         cartRepository.deleteById(id);
     }
 

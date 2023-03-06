@@ -52,21 +52,15 @@ public class ProductController {
     	productService.removeProductById(id);
     }
     
-    @PutMapping("/admin/product/update/{id}")
-    public ProductBean updateCategory(@PathVariable int id,Model model)
-    {
-    	
-        Product product=productService.getProductById(id).get();
-        ProductBean p=new ProductBean();
-        p.setId(product.getId());
-        p.setProd_name(product.getProd_name());
-        p.setCategoryId(product.getCategory_id());
-        p.setPrice(product.getPrice());
-        p.setQty(product.getQty());
-        p.setDescription(product.getDescription());
-        model.addAttribute(categoryService.getAllCategory());
-        model.addAttribute(p);
-        return p;
-        
-    }
+//    @PutMapping("/admin/product/update/{id}")
+//    public ProductBean updateCategory(@PathVariable int id,Product product)
+//    {
+//    	
+//       
+////        model.addAttribute(categoryService.getAllCategory());
+////        model.addAttribute(p);
+////        return p;
+//    	return productService.updateProductByid(id, product);
+//        
+//    }
 }

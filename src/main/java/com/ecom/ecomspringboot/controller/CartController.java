@@ -34,6 +34,14 @@ public class CartController {
 		return new ResponseEntity<>("Product added to cart", HttpStatus.CREATED);
 	}
 	
+//	@DeleteMapping("/cart/delete/{id}")
+//	public ResponseEntity<String> removeFromCart()
+//	{
+//		cartService.deleteCartItem(id);
+//		return new ResponseEntity<>("Product removed from cart", HttpStatus.OK);
+//		
+//	}
+	
 	
 	
 }

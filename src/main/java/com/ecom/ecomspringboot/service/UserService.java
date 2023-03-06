@@ -29,6 +29,17 @@ public class UserService {
 		ResponseEntity.ok("deleted");
 
 	}
+
+	public User updateUser(int id,User user) {
+		//return userRepository.save(user);
+		userRepository.findById(id).get();
+		return userRepository.save(user);
+		
+	}
+	
+	
+
+
 	
 //	public Integer isUserPresent(User user){
 //        User user1 = userRepository.getCustomerByEmailAndName(user.getEmail(),user.getFirstname());

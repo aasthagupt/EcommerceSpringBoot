@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -25,7 +26,6 @@ public class UserController {
     
     @GetMapping("/user")
 	public List<User> getUser(){
-    	//model.addAttribute(productService.getAllProduct());
     	return userService.getAllUserDetail();
     }
     
@@ -41,6 +41,13 @@ public class UserController {
     {
     	userService.deleteUserById(id);
 		return new ResponseEntity<>("User removed successfully", HttpStatus.OK);
+    }
+    
+    @PutMapping("/user/update/{id}")
+    public ResponseEntity<String> updateProduct(@PathVariable("id") int id, @RequestBody User user)
+    {
+    	userService.updateUser(id, user);
+		return new ResponseEntity<>("User updated successfully", HttpStatus.OK);
 
     }
 }

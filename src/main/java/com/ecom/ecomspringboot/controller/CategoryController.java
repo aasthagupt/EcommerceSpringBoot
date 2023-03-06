@@ -49,13 +49,17 @@ public class CategoryController{
     }
     
     @PutMapping("/admin/category/update/{id}")
-    public Optional<Category> updateCategory(@PathVariable int id,Model model)
+    public Category updateCategory(@PathVariable int id,Category category)
     {
-        Optional<Category> category= categoryService.getCategoryById(id);
-        if(category.isPresent()) {
-        	model.addAttribute(category.get()); 
-        }       
-        return category;
+//        Optional<Category> category= categoryService.getCategoryById(id);
+//        if(category.isPresent())
+//        {
+//        	model.addAttribute(category.get()); 
+//        }
+//        
+//        return category;
+    	return categoryService.editCategory(id, category);
+    	
     }
     
 

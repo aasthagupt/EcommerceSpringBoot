@@ -7,6 +7,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
+import com.ecom.ecomspringboot.beans.ProductBean;
+import com.ecom.ecomspringboot.entity.Category;
 import com.ecom.ecomspringboot.entity.Product;
 import com.ecom.ecomspringboot.exception.ProductNotExistsException;
 //import com.ecom.ecomspringboot.exception.ProductNotExistsException;
@@ -37,9 +39,18 @@ public class ProductService {
 		return productRepository.findById(id);
 	}
 	
-	public Optional<Product> updateProductByid(){
-		return null;
-	}
+//	public Product updateProductByid(int id,Product updateProduct){
+//		 Product product=productRepository.findById((long) id).get();
+//	        ProductBean p=new ProductBean();
+//	        p.setId(product.getId());
+//	        p.setProd_name(product.getProd_name());
+//	        p.setCategoryId(product.getCategory_id());
+//	        p.setPrice(product.getPrice());
+//	        p.setQty(product.getQty());
+//	        p.setDescription(product.getDescription());
+//	        Product c= productRepository.save(product);
+//	    	return c; 
+//	}
 	
 	public Product findById(Long product_id)throws ProductNotExistsException
 	{

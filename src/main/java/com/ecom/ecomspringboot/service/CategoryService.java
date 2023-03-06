@@ -38,7 +38,13 @@ public class CategoryService {
 	    public Optional<Category> getCategoryById(int id){
 	        return categoryRepository.findById(id);
 	    }
-	         
+	    public Category editCategory(int id,Category updateCategory)
+	    {
+	    	Category category=categoryRepository.findById(id).get();
+	    	category.setName(updateCategory.getName());
+	    	Category c= categoryRepository.save(category);
+	    	return c;
+	    }
 	    
 	    
 	    
